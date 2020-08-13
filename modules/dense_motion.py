@@ -1,7 +1,12 @@
 from torch import nn
 import torch.nn.functional as F
 import torch
-from modules.util import Hourglass, AntiAliasInterpolation2d, make_coordinate_grid, kp2gaussian
+import importlib
+util = importlib.import_module('first-order-model.modules.util')
+Hourglass = util.Hourglass
+AntiAliasInterpolation2d = util.AntiAliasInterpolation2d
+make_coordinate_grid = util.make_coordinate_grid
+kp2gaussian = util.kp2gaussian
 
 
 class DenseMotionNetwork(nn.Module):

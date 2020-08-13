@@ -7,7 +7,8 @@ from imageio import mimread
 import numpy as np
 from torch.utils.data import Dataset
 import pandas as pd
-from augmentation import AllAugmentationTransform
+import importlib
+AllAugmentationTransform = importlib.import_module('first-order-model.augmentation').AllAugmentationTransform
 import glob
 
 
